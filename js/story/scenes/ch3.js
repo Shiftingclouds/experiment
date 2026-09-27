@@ -11,8 +11,6 @@ HW.scene("ch3", String.raw`
   *set comp "Sal"
 *temp t1 0
 *temp lingered false
-*temp tamsin_left false
-*temp helped_tamsin false
 
 The first trial of the Crown is run at night, at the end of the autumn term, on a night of hard frost.
 

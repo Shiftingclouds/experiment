@@ -42,7 +42,7 @@
     /* the Crown */
     crown_started: false, entered: false, second_of: "", withdrew: false, tamsin_trade: "",
     cs_pc: 0, cs_tamsin: 0, cs_sal: 0, cs_rilla: 0, cs_tolly: 0, crowned: "",
-    t1_score: 0, t2_score: 0, deep_winner: "",
+    t1_score: 0, t2_score: 0, deep_winner: "", tamsin_left: false, helped_tamsin: false,
     told_rilla: false, rilla_out: false,
     revealed_public: false, honoria_exposed: false, honoria_turned: false, council_ally: 0,
 
@@ -58,7 +58,8 @@
 
     /* climax */
     strain: 0, hands: 0, holders: 0, path: "", writ: false, hester_lives: false, nan_sleeps: false,
-    bound: "", casualties: "", pc_fate: "", flood_level: 0, pip_safe: true
+    bound: "", casualties: "", pc_fate: "", flood_level: 0, pip_safe: true,
+    world: "", by_writ: false, wept: false, fell_here: false
   };
 
   var clamp = {};
