@@ -22,7 +22,9 @@ fs.writeFileSync(path.join(ROOT, "dist/heldwater.html"), inlined);
 const head = /<head>([\s\S]*?)<\/head>/.exec(inlined)[1];
 const body = /<body>([\s\S]*?)<\/body>/.exec(inlined)[1];
 const title = /<title>[\s\S]*?<\/title>/.exec(head)[0];
-const fontLink = (head.match(/<link rel="stylesheet" href="https:\/\/fonts[^>]+>/) || [""])[0];
+// Inline event handlers may be blocked by the artifact CSP, so load the fonts with a plain link there.
+const fontLink = (head.match(/<link rel="stylesheet" href="https:\/\/fonts[^>]+>/) || [""])[0]
+  .replace(/\s+media="print"\s+onload="[^"]*"/, "");
 const style = /<style>[\s\S]*?<\/style>/.exec(head)[0];
 const artifact = [title, style, fontLink, body.trim()].join("\n");
 fs.writeFileSync(path.join(ROOT, "dist/heldwater-artifact.html"), artifact);
