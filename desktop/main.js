@@ -10,6 +10,7 @@ function createWindow() {
     minHeight: 500,
     title: "Heldwater",
     backgroundColor: "#e8ebe6",
+    icon: path.join(__dirname, "build", "icon.png"),
     autoHideMenuBar: true,
     webPreferences: { contextIsolation: true, nodeIntegration: false, sandbox: true }
   });
