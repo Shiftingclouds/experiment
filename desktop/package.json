@@ -1,0 +1,36 @@
+{
+  "name": "heldwater",
+  "productName": "Heldwater",
+  "version": "1.0.0",
+  "description": "Heldwater — an interactive novel",
+  "author": "shiftingclouds",
+  "main": "main.js",
+  "scripts": {
+    "sync": "node ../tools/build.js && node -e \"require('fs').copyFileSync('../dist/heldwater.html','app/heldwater.html')\"",
+    "start": "npm run sync && electron .",
+    "dist:win": "npm run sync && electron-builder --win portable --x64"
+  },
+  "build": {
+    "appId": "com.shiftingclouds.heldwater",
+    "productName": "Heldwater",
+    "files": [
+      "main.js",
+      "app/**"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "build/icon.png",
+      "signAndEditExecutable": false
+    },
+    "portable": {
+      "artifactName": "Heldwater.exe"
+    }
+  },
+  "devDependencies": {
+    "electron": "^44.4.5",
+    "electron-builder": "^26.15.3"
+  }
+}
