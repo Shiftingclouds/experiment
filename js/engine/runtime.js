@@ -173,6 +173,7 @@
     this.before = null;
     var blocks = [];
     var para = [];
+    var paraIndent = -1;
     var page = null;
     var self = this;
     st.turn++;
@@ -182,6 +183,7 @@
         blocks.push({ k: "p", html: para.join(" ") });
         para = [];
       }
+      paraIndent = -1;
     }
 
     var steps = 0;
@@ -206,6 +208,9 @@
           st.pc++;
           break;
         case "text":
+          // Text at a different indentation (entering or leaving a block) starts a new paragraph.
+          if (para.length && L.indent !== paraIndent) flush();
+          if (!para.length) paraIndent = L.indent;
           para.push(this.render(L.raw, st.pc));
           st.pc++;
           break;

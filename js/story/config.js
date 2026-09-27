@@ -37,7 +37,7 @@
     know_report: false, has_report: false, report_source: "",
     know_nan: false, clue_knitting: false, nan_letter: false, nan_hint: false,
     hester_message: false, hester_message_given: false, rain_quest: false, rain_given: false, hester_plan: false,
-    leave_choice: "", reveal_from: "",
+    leave_choice: "", reveal_from: "", know_tamsin_plan: false,
 
     /* the Crown */
     crown_started: false, entered: false, second_of: "", withdrew: false, tamsin_trade: "",
@@ -75,8 +75,9 @@
 
   var statNames = {
     purchase: "Purchase", finesse: "Finesse", lore: "Lore", nerve: "Nerve", sway: "Sway", standing: "Standing",
-    rel_tamsin: "Tamsin", rel_tolly: "Tolly", rel_sal: "Sal", rel_hob: "Hob", rel_fell: "Master Fell",
-    rel_warden: "the Warden", rel_hester: "Hester", rel_rilla: "Rilla", rel_nan: "Nan Win",
+    rel_tamsin: "Tamsin's regard", rel_tolly: "Tolly's regard", rel_sal: "Sal's regard", rel_hob: "Hob's regard",
+    rel_fell: "Master Fell's regard", rel_warden: "the Warden's regard", rel_hester: "Hester's regard",
+    rel_rilla: "Rilla's regard", rel_nan: "Nan Win's regard",
     rom_tamsin: "Tamsin ♥", rom_tolly: "Tolly ♥", rom_sal: "Sal ♥"
   };
 
@@ -166,8 +167,9 @@
 
   function statScreen(v, state) {
     var sections = [];
-    var role = v.entered ? (v.withdrew ? "Withdrawn" : "Entrant") :
-      v.second_of ? "Second to " + ({ tamsin: "Tamsin", tolly: "Tolly", sal: "Sal" })[v.second_of] : "—";
+    var principal = ({ tamsin: "Tamsin", tolly: "Tolly", sal: "Sal" })[v.second_of];
+    var role = v.entered ? "Entrant" : v.withdrew ? "Withdrew; second to " + principal :
+      v.second_of ? "Second to " + principal : "\u2014";
     var pron = v.pron === "he" ? "he / him" : v.pron === "she" ? "she / her" : "they / them";
     sections.push({ title: null, rows: [{ type: "id", items: [
       ["Name", HW.text.escapeHTML((v.name || "—") + (v.surname ? " " + v.surname : ""))],
@@ -227,7 +229,7 @@
     if (v.crown_started) {
       var body = [];
       function entrant(label, key, out) { body.push([label + (out ? " (withdrawn)" : ""), v[key]]); }
-      if (v.entered) entrant(v.name + " (you)", "cs_pc", v.withdrew);
+      if (v.entered || v.withdrew) entrant(v.name + " (you)", "cs_pc", v.withdrew);
       entrant("Rilla Hesketh", "cs_rilla", v.rilla_out);
       entrant("Tamsin Mottram", "cs_tamsin", false);
       entrant("Sal Quaile", "cs_sal", false);

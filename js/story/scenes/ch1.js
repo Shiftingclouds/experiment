@@ -236,11 +236,7 @@ Tamsin Mottram is standing in the middle of the car with her feet planted wide. 
 [i]Leaning,[/i] you think. That's what that is. That's what they come up here to learn. But first-years can't lean. You have to be sworn to lean, and nobody is sworn before the Oathing.
 
 With a clack you feel in your teeth, the safety dog drops back into its rack.
-*if (lift = "roof")
-  "Now!" you shout down the hatch, and Samuel throws the lever one-handed.
-*else
-  Samuel throws the lever one-handed.
-The car lurches, catches, and begins to climb again. Tamsin lets go. She sits down very suddenly on the bench and picks up her book, and her hands are shaking so badly the pages rattle.
+{@lift = "roof"|"Now!" you shout down the hatch, and Samuel throws the lever one-handed.|Samuel throws the lever one-handed.} The car lurches, catches, and begins to climb again. Tamsin lets go. She sits down very suddenly on the bench and picks up her book, and her hands are shaking so badly the pages rattle.
 
 Up through the soles of your feet, the hum climbs back to B-flat, like somebody clearing their throat after a lie.
 *set hum "B♭"
