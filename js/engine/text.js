@@ -103,10 +103,12 @@
 
   function smartQuotes(s) {
     // Operates on text that may contain <em>/<strong> tags (no attributes, no quotes inside).
-    s = s.replace(/(^|[\s(\[>])"(?=\S)/g, "$1“");
+    s = s.replace(/(^|[\s(\[])"(?=\S)/g, "$1“");
+    s = s.replace(/(<em>|<strong>)"(?=\S)/g, "$1“");
     s = s.replace(/([—–])"(?=[^\s.,;:!?)—])/g, "$1“");
     s = s.replace(/"/g, "”");
-    s = s.replace(/(^|[\s(\[>“])'(?=[A-Za-z])/g, "$1‘");
+    s = s.replace(/(^|[\s(\[“])'(?=[A-Za-z])/g, "$1‘");
+    s = s.replace(/(<em>|<strong>)'(?=[A-Za-z])/g, "$1‘");
     s = s.replace(/'/g, "’");
     return s;
   }

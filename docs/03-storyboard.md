@@ -171,7 +171,7 @@ strain   = 2 + (Nan still unpicking ? 2 : 0) + (Wet Night not contained ? 1 : 0)
 hands    = allies recruited (friends ≥ threshold, Hob, Rilla, Fell, Warden, Rows folk)
          + (standing ≥ 60 ? 2 : standing ≥ 40 ? 1 : 0) + (revealed_public ? 1 : 0)
          + (surge from a broken vow ? 2 : 0) + (Hester told the plan ? 1 : 0)
-Holding succeeds if hands ≥ strain + 3.   (Hester lives if hands ≥ strain + 5.)
+Holding succeeds if hands ≥ strain + 3 and at least two allies came.   (Hester lives if hands ≥ strain + 5.)
 Sluices succeed if holders ≥ strain, where holders = Warden, Fell, Hester, you (Purchase ≥ 50), surge, Nan.
 Casualties depend on evac = Mam + Rows phone tree + Hob's runners + public knowledge + sirens sounded tonight.
 ```

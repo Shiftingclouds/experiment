@@ -208,8 +208,10 @@
           st.pc++;
           break;
         case "text":
-          // Text at a different indentation (entering or leaving a block) starts a new paragraph.
-          if (para.length && L.indent !== paraIndent) flush();
+          // Text at a different indentation (entering or leaving a block), or after an
+          // *if / *elseif / *else boundary, starts a new paragraph.
+          if (para.length && (L.indent !== paraIndent || this.boundary)) flush();
+          this.boundary = false;
           if (!para.length) paraIndent = L.indent;
           para.push(this.render(L.raw, st.pc));
           st.pc++;
@@ -328,6 +330,7 @@
       case "elseif":
       case "else": {
         // Reached in normal flow: a previous branch ran. Skip this and any following branches.
+        this.boundary = true;
         var lines = sc.lines;
         var p = L.blockEnd;
         for (;;) {
@@ -452,6 +455,7 @@
 
   Runtime.prototype.execIf = function (L, sc) {
     var st = this.state;
+    this.boundary = true;
     var lines = sc.lines;
     var cur = L;
     var idx = st.pc;

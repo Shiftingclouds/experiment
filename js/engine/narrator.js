@@ -166,6 +166,8 @@
   }
 
   HW.narrator = {
+    /** Test hook: supply an SDK constructor instead of loading it from the CDN. */
+    _setSDK: function (Ctor) { sdkPromise = Promise.resolve(Ctor); },
     voices: VOICES,
     availability: availability,
     retell: retell,

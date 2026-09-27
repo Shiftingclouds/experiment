@@ -285,6 +285,10 @@
     story.classList.remove("hw-fade");
     void story.offsetWidth;
     story.classList.add("hw-fade");
+    story.addEventListener("animationend", function done() {
+      story.classList.remove("hw-fade");
+      story.removeEventListener("animationend", done);
+    });
 
     var living = ui.settings.narration === "living" && hasProse(page);
     var retold = living && page.retold && !page.showOriginal ? page.retold : null;
