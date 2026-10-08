@@ -1,0 +1,80 @@
+{
+  "Format": "2.0.0",
+  "Changes": [
+    // ---------------------------------------------------------------- art
+    {
+      "Action": "Load",
+      "Target": "Characters/{{ModId}}_Auden",
+      "FromFile": "assets/Auden/Auden_sprite.png"
+    },
+    {
+      // vanilla 64x64 portraits (fallback when no HD portrait framework is installed)
+      "Action": "Load",
+      "Target": "Portraits/{{ModId}}_Auden",
+      "FromFile": "assets/Auden/Auden_portraits.png"
+    },
+    {
+      // 128x128 portraits, same layout your existing characters use
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Portraits/Auden_HD",
+      "FromFile": "assets/Auden/Auden_portraits_HD.png"
+    },
+    {
+      // HD Portraits metadata. If your other characters use a different HD framework, copy their setup here instead.
+      "Action": "EditData",
+      "Target": "Mods/HDPortraits",
+      "Entries": {
+        "{{ModId}}_Auden": {
+          "Size": 128,
+          "Portrait": "Mods/{{ModId}}/Portraits/Auden_HD"
+        }
+      },
+      "When": { "HasMod": "tlitookilakin.HDPortraits" }
+    },
+
+    // ---------------------------------------------------------------- NPC data
+    {
+      "Action": "EditData",
+      "Target": "Data/Characters",
+      "Entries": {
+        "{{ModId}}_Auden": {
+          "DisplayName": "Auden",
+          "Gender": "Male",
+          "Age": "Adult",
+          "Manner": "Polite",
+          "SocialAnxiety": "Neutral",
+          "Optimism": "Positive",
+          "IsDarkSkinned": true,
+          "CanBeRomanced": true,
+          "BirthSeason": "Winter",
+          "BirthDay": 11,
+          "HomeRegion": "Town",
+          "Home": [
+            {
+              // TODO: point this at the school's observatory map once it exists.
+              "Id": "Default",
+              "Location": "WizardHouse",
+              "Tile": { "X": 5, "Y": 14 },
+              "Direction": "down"
+            }
+          ],
+          "SocialTab": "UnknownUntilMet",
+          "Calendar": "AlwaysShown"
+        }
+      }
+    },
+    {
+      // love / like / dislike / hate / neutral
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "{{ModId}}_Auden": "Oh! You remembered. I'm going to be insufferably happy about this all week.$l/395 74 595 414 72/That's lovely, thank you. Truly.$h/86 84 82 614 611 80/Ah. I'll... find a use for it. Somewhere. Eventually./92 330/@, I'm going to pretend this was a hex gone wrong.$a/168 167 283//"
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Characters/Dialogue/{{ModId}}_Auden",
+      "FromFile": "assets/Auden/dialogue.json"
+    }
+  ]
+}

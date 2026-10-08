@@ -1,0 +1,11 @@
+{
+  "Name": "Wizarding School: Auden",
+  "Author": "shiftingclouds",
+  "Version": "0.1.0",
+  "Description": "Adds Auden Fairweather, the school's astronomy tutor and a romanceable NPC.",
+  "UniqueID": "shiftingclouds.WizardSchool.Auden",
+  "UpdateKeys": [],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
+}

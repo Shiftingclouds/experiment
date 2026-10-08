@@ -1,0 +1,29 @@
+{
+  "Introduction": "Oh, hello. Sorry, I was counting. Doesn't matter, I'll start again.#$b#Auden Fairweather. I teach astronomy here. Well, I teach it on clear nights. On cloudy ones I mostly apologise.$h",
+
+  "Mon": "First-years think divination means knowing the future. Mostly it means knowing which tea leaves stain.",
+  "Tue": "I charmed these glasses so I can see starlight in the daytime. Brilliant idea, terrible headache.$u",
+  "Wed": "Wednesday. The observatory roof leaks on Wednesdays. I don't know why. I've stopped asking it.",
+  "Thu": "If you see a comet tonight, it's probably a comet. If it waves, it's probably a second-year on a broom.",
+  "Fri": "Fridays I take the lantern up to the tower early. It's a ritual. A very small, very cold ritual.",
+  "Sat": "No lessons today. I'm going to read something with no diagrams in it at all. Revolutionary.$h",
+  "Sun": "Sundays are for mending star charts. The ink fades if you don't speak to it kindly.",
+
+  "Mon4": "I saved you a seat at the telescope on Thursday. Unless you'd rather not. You'd tell me, wouldn't you?",
+  "Wed4": "The leak's back. I put a bucket under it and named it after you. That's a compliment, I promise.$h",
+  "Fri6": "Come up to the tower after dark sometime, @. There's a cluster in the east I've never shown anyone.$l",
+  "Sun8": "I keep finding new constellations, and they all look a bit like you. That's... not very scientific of me, is it?$u",
+  "Sat10": "Whatever the stars say about next year, I'd like you in it. There. I said it.$l",
+
+  "spring_Mon": "Spring skies are hazy. Good for wishing, bad for measuring. I do a lot of wishing in spring.",
+  "summer_Wed": "Too warm in the tower. The telescope fogs and so do I.$s",
+  "fall_Fri": "Autumn is the best season for stargazing. Long nights, clear air, excellent excuses to stay up.$h",
+  "winter_Sun": "My birthday's in winter. The sky's at its clearest then, so I've never minded the cold.",
+
+  "AcceptGift_(O)395": "Coffee. You've just saved three lectures and possibly a life.$h",
+  "AcceptBouquet": "For me? I... yes. Yes, of course. I've been hoping, quietly, for longer than I'd like to admit.$l",
+  "RejectBouquet_NotDatingYet": "Oh. That's very kind. I think we should know each other a little better first, don't you?$s",
+  "RejectBouquet_VeryLowHearts": "I'm flattered, truly. But I hardly know you yet.$s",
+  "RejectBouquet_Divorced": "I think we both know that would be a mistake.$s",
+  "RejectBouquet_NpcAlreadyMarried": "You know I'm spoken for, @."
+}
